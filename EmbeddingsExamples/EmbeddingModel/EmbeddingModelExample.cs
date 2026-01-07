@@ -16,9 +16,9 @@ namespace DeployedInAzure.EmbeddingsExamples.EmbeddingModel
         };
 
         private readonly EmbeddingClient _embeddingClient = new AzureOpenAIClient(
-            new Uri("replaceItWithUriToYourMicrosoftFoundryService"), 
+            new Uri(Environment.GetEnvironmentVariable("AZURE_OPEN_AI_CLIENT_URI")!), 
             new DefaultAzureCredential())
-            .GetEmbeddingClient(deploymentName: "replaceItWithASpecificDeploymentName");
+            .GetEmbeddingClient(deploymentName: Environment.GetEnvironmentVariable("AZURE_OPEN_AI_CLIENT_DEPLOYMENT_NAME")!);
 
         public async Task Run()
         {
