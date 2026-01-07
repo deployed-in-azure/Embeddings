@@ -56,6 +56,7 @@ namespace DeployedInAzure.EmbeddingsExamples.AiSearchVectorSearch
 
             // if you use Visual Studio Authentication and 401 or 403 is returned even if you have 'Search Index Data Contributor' RBAC role assigned
             // make sure to set the environment variable `AZURE_TENANT_ID` to your Entra tenant ID where the Microsoft Foundry resource is deployed
+            // + on the Keys page of the Azure AI Search resource > 'API Access control' section > ensure that either RBAC or Both is selected
             var indexDocumentsResult = await _searchClient.IndexDocumentsAsync(batch);
 
             Console.WriteLine($"`{indexDocumentsResult.Value.Results.Where(x => x.Succeeded).Count()}` documents were uploaded to Azure AI Search successfully!");
