@@ -16,8 +16,8 @@ namespace DeployedInAzure.EmbeddingsExamples.CosmosDbForNoSql
         private readonly CosmosClient _cosmosClient = new(Environment.GetEnvironmentVariable("AZURE_COSMOS_DB_URI")!, new DefaultAzureCredential());
 
         private Container VectorSearchContainer => _cosmosClient
-            .GetDatabase("MyDatabase")
-            .GetContainer("VectorSearchContainer");
+            .GetDatabase(Environment.GetEnvironmentVariable("AZURE_COSMOS_DB_DATABASE")!)
+            .GetContainer(Environment.GetEnvironmentVariable("AZURE_COSMOS_DB_CONTAINER")!);
 
         private readonly List<string> _keywords = ["Mars", "Apollo 11", "Neil Armstrong", "Curiosity Rover"];
 
