@@ -41,8 +41,24 @@ To run the examples, set the following environment variables:
 
 Ensure that your identity has:
 - the `Azure AI User` RBAC role assigned to access the Foundry resource
-- the `Cosmos DB Built-in Data Contributor` RBAC role assigned to access the Foundry resource
+- the `Cosmos DB Built-in Data Contributor` RBAC role assigned to access the Azure Cosmos DB resource
 
 [Read the blog post to find more details](https://deployedinazure.com/vector-search-in-azure-cosmos-db-for-nosql/)
+
+### Vector Search in Azure AI Search: A Practical Guide
+
+Vector Search in Azure AI Search explained with filters, role-based filtering and C# examples for building fast, intelligent vector search features.
+
+To run the examples, set the following environment variables:
+- `AZURE_OPEN_AI_CLIENT_URI`: Your Microsoft Foundry endpoint URL.
+- `AZURE_OPEN_AI_CLIENT_DEPLOYMENT_NAME`: Your deployment name for the embedding model (`text-embedding-3-small` for instance).
+- `AZURE_AI_SEARCH_URI`: Your Azure AI Search service endpoint URL.
+- `AZURE_AI_SEARCH_INDEX`: Your Azure AI Search index name.
+
+Ensure that your identity has:
+- the `Azure AI User` RBAC role assigned to access the Foundry resource
+- the `Search Index Data Contributor` RBAC role assigned to access the Azure AI Search resource
+
+[Read the blog post to find more details](https://deployedinazure.com/vector-search-in-azure-ai-search/)
 
 
