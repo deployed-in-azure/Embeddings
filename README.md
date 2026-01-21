@@ -61,4 +61,23 @@ Ensure that your identity has:
 
 [Read the blog post to find more details](https://deployedinazure.com/vector-search-in-azure-ai-search/)
 
+### Vectorizers in Azure AI Search: 5 Key Insights You Must Know
+
+Learn how Vectorizers in Azure AI Search simplify embedding generation, streamline C# code, and improve vector search workflows.
+
+To run the examples, set the following environment variables:
+- `AZURE_OPEN_AI_CLIENT_URI`: Your Microsoft Foundry endpoint URL.
+- `AZURE_OPEN_AI_CLIENT_DEPLOYMENT_NAME`: Your deployment name for the embedding model (`text-embedding-3-small` for instance).
+- `AZURE_AI_SEARCH_URI`: Your Azure AI Search service endpoint URL.
+- `AZURE_AI_SEARCH_INDEX`: Your Azure AI Search index name.
+
+Ensure that your identity has:
+- the `Azure AI User` RBAC role assigned to access the Foundry resource
+- the `Search Index Data Contributor` RBAC role assigned to access the Azure AI Search resource
+
+Ensure that the Azure AI Search identity has:
+- the `Azure AI User` RBAC role assigned to access the Foundry resource
+
+[Read the blog post to find more details](https://deployedinazure.com/vectorizers-in-azure-ai-search/)
+
 
