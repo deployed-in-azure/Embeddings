@@ -9,7 +9,7 @@ namespace DeployedInAzure.EmbeddingsExamples.AiSearchIntegratedVectorization
     {
         private readonly SearchClient _searchClient = new SearchClient(
             new Uri(Environment.GetEnvironmentVariable("AZURE_AI_SEARCH_URI")!),
-            indexName: "vector-search-index-with-vectorizer",
+            indexName: Environment.GetEnvironmentVariable("AZURE_AI_SEARCH_INDEX")!,
             new DefaultAzureCredential());
 
         private readonly List<string> _keywords = ["Mars", "Apollo 11", "Neil Armstrong", "Curiosity Rover"];
