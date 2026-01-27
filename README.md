@@ -80,4 +80,22 @@ Ensure that the Azure AI Search identity has:
 
 [Read the blog post to find more details](https://deployedinazure.com/vectorizers-in-azure-ai-search/)
 
+### Integrated Vectorization in Azure AI Search: How to Automate Embeddings
+
+A complete guide to integrated vectorization in Azure AI Search, showing how to automate embeddings and streamline your vector search pipeline.
+
+To run the examples, set the following environment variables:
+- `AZURE_AI_SEARCH_URI`: Your Azure AI Search service endpoint URL.
+- `AZURE_AI_SEARCH_INDEX`: Your Azure AI Search index name.
+
+Ensure that your identity has:
+- the `Search Index Data Reader` RBAC role assigned to access the Azure AI Search resource
+
+Ensure that the Azure AI Search identity has:
+- the `Cosmos DB Account Reader` (control-plane) and `Cosmos DB Built-in Data Reader` (data-plane) RBAC roles assigned to access the Azure Cosmos DB resource
+- the `Azure AI User` RBAC role assigned to access the Foundry resource
+
+[Read the blog post to find more details](https://deployedinazure.com/integrated-vectorization-in-azure-ai-search/)
+
+
 
