@@ -5,10 +5,10 @@
         // [Planet, Mission, Astronaut]
         private Dictionary<string, bool[]> _items = new()
         {
-            ["Mars"] =              [true,  false, false],
-            ["Apollo 11"] =         [false, true,  true ],
-            ["Neil Armstrong"] =    [false, true,  true ],
-            ["Curiosity Rover"] =   [true,  true,  false]
+            ["Mars"] =              [true,  false, false], // [1, 0, 0]
+            ["Apollo 11"] =         [false, true,  true ], // [0, 1, 1]
+            ["Neil Armstrong"] =    [false, true,  true ], // [0, 1, 1]
+            ["Curiosity Rover"] =   [true,  true,  false]  // [1, 1, 0]
         };
 
         private const int NUMBER_OF_DIMENSIONS = 3;
