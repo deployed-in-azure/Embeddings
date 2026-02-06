@@ -2,6 +2,7 @@
 using Azure.Identity;
 using DeployedInAzure.EmbeddingsExamples.CustomVectorDb;
 using Microsoft.Azure.Cosmos;
+using Microsoft.Azure.Cosmos.Linq;
 using OpenAI.Embeddings;
 
 namespace DeployedInAzure.EmbeddingsExamples.CosmosDbForNoSql
@@ -46,6 +47,7 @@ namespace DeployedInAzure.EmbeddingsExamples.CosmosDbForNoSql
                     id = item.Index.ToString(),
                     Phrase = item.phraseAndTagPair.Phrase,
                     Vector = response.Value.ToFloats().ToArray(),
+                    ShardKey = item.phraseAndTagPair.Tag,
                     Tags = [item.phraseAndTagPair.Tag]
                 };
 
@@ -95,23 +97,19 @@ namespace DeployedInAzure.EmbeddingsExamples.CosmosDbForNoSql
 
         public async Task<IReadOnlyCollection<CosmosDbForNoSqlVectorSearchResult>> SearchAsync(float[] queryVector, int topK)
         {
-            var sql = """
-                SELECT TOP @topK
-                    c.id,
-                    c.Phrase,
-                    c.Tags,
-                    VectorDistance(c.Vector, @queryVector) AS SimilarityScore
-                FROM c
-                ORDER BY VectorDistance(c.Vector, @queryVector)
-                """;
-    
-            var query = new QueryDefinition(sql)
-                .WithParameter("@topK", topK)
-                .WithParameter("@queryVector", queryVector);
-    
-            var results = new List<CosmosDbForNoSqlVectorSearchResult>();
+            var queryable = VectorSearchContainer.GetItemLinqQueryable<CosmosDbForNoSqlDocumentModel>()
+                .OrderByRank(x => CosmosLinqExtensions.VectorDistance(x.Vector, queryVector, false, options: null))
+                .Select(x => new CosmosDbForNoSqlVectorSearchResult()
+                {
+                    id = x.id,
+                    Phrase = x.Phrase,
+                    Tags = x.Tags,
+                    SimilarityScore = CosmosLinqExtensions.VectorDistance(x.Vector, queryVector, false, options: null)
+                })
+                .Take(topK);
 
-            using var iterator = VectorSearchContainer.GetItemQueryIterator<CosmosDbForNoSqlVectorSearchResult>(query);    
+            var results = new List<CosmosDbForNoSqlVectorSearchResult>();
+            using var iterator = queryable.ToFeedIterator();
             while (iterator.HasMoreResults)
             {
                 var partialResponse = await iterator.ReadNextAsync();
