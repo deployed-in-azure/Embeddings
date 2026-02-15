@@ -17,4 +17,19 @@
     <PackageReference Include="System.Numerics.Tensors" Version="10.0.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="AiSearchMultimodalVectorSearch\SamplePhotos\astronaut.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="AiSearchMultimodalVectorSearch\SamplePhotos\coffee.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="AiSearchMultimodalVectorSearch\SamplePhotos\mars.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="AiSearchMultimodalVectorSearch\SamplePhotos\mars_rover.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

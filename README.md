@@ -97,5 +97,17 @@ Ensure that the Azure AI Search identity has:
 
 [Read the blog post to find more details](https://deployedinazure.com/integrated-vectorization-in-azure-ai-search/)
 
+### Multimodal Embeddings with Azure Vision: A Practical Guide to Text-Image Search
+
+Multimodal Embeddings with Azure Vision enable powerful text‑image search. Check how this approach can enhance your app’s retrieval capabilities!
+
+To run the examples, set the following environment variables:
+- `AZURE_COMPUTER_VISION_URI`: Your Azure Computer Vision service endpoint URL.
+
+Ensure that your identity has:
+- the `Cognitive Services Data Contributor` RBAC role assigned to access the Azure Computer Vision resource
+
+[Read the blog post to find more details](https://deployedinazure.com/multimodal-embeddings-with-azure-vision/)
+
 
 

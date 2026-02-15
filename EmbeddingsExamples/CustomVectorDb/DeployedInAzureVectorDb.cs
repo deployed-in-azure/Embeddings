@@ -6,15 +6,20 @@ namespace DeployedInAzure.EmbeddingsExamples.CustomVectorDb
     {
         private readonly Dictionary<string, VectorSearchRecord> _vectors = new();
 
-        private const int SUPPORTED_VECTOR_DIMENSION = 1536;
+        private int _supportedVectorDimension;
+
+        public DeployedInAzureVectorDb(int supportedVectorDimension = 1536)
+        {
+            _supportedVectorDimension = supportedVectorDimension;
+        }
 
         public void Index(VectorSearchRecord? vectorDocument)
         {
             ArgumentNullException.ThrowIfNull(vectorDocument);
 
-            if (vectorDocument.Vector.Length != SUPPORTED_VECTOR_DIMENSION)
+            if (vectorDocument.Vector.Length != _supportedVectorDimension)
             {
-                throw new InvalidOperationException($"Invalid vector dimension. The only supported dimension is {SUPPORTED_VECTOR_DIMENSION}.");
+                throw new InvalidOperationException($"Invalid vector dimension. The only supported dimension is {_supportedVectorDimension}.");
             }
 
             if (_vectors.ContainsKey(vectorDocument.Id))
@@ -27,9 +32,9 @@ namespace DeployedInAzure.EmbeddingsExamples.CustomVectorDb
 
         public IReadOnlyCollection<VectorSearchResult> Search(float[] queryVector, int topK)
         {
-            if (queryVector.Length != SUPPORTED_VECTOR_DIMENSION)
+            if (queryVector.Length != _supportedVectorDimension)
             {
-                throw new InvalidOperationException($"Invalid vector dimension. The only supported dimension is {SUPPORTED_VECTOR_DIMENSION}.");
+                throw new InvalidOperationException($"Invalid vector dimension. The only supported dimension is {_supportedVectorDimension}.");
             }
 
             if (topK <= 0)
