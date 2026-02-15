@@ -50,7 +50,7 @@ namespace DeployedInAzure.EmbeddingsExamples
             // ---
 
             // --- Multimodal Vector Search in Azure AI Search: Combining Text and Images ---
-            await new AiSearchMultimodalEmbeddingsVectorSearchExample().Run();
+            //await new AiSearchMultimodalEmbeddingsVectorSearchExample().Run();
 
             Console.ReadKey();
         }
