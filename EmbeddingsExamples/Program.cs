@@ -1,4 +1,5 @@
 ﻿using DeployedInAzure.EmbeddingsExamples.AiSearchIntegratedVectorization;
+using DeployedInAzure.EmbeddingsExamples.AiSearchMultimodalVectorSearch;
 using DeployedInAzure.EmbeddingsExamples.AiSearchVectorSearch;
 using DeployedInAzure.EmbeddingsExamples.AiSearchVectorSearchUsingVectorizer;
 using DeployedInAzure.EmbeddingsExamples.Attributes;
@@ -16,7 +17,7 @@ namespace DeployedInAzure.EmbeddingsExamples
         static async Task Main(string[] args)
         {
             // --- Introduction to embeddings: Capture the meaning of data ---
-            new AttributesExample().Run();
+            //new AttributesExample().Run();
             //new BinaryVectorsExample().Run();
             //new SoftLabelEncodingExample().Run();
             //await new EmbeddingModelExample().Run();
@@ -47,6 +48,9 @@ namespace DeployedInAzure.EmbeddingsExamples
             // --- Integrated Vectorization in Azure AI Search: How to Automate Embeddings ---
             //await new AiSearchIntegratedVectorizationExample().Run();
             // ---
+
+            // --- Multimodal Vector Search in Azure AI Search: Combining Text and Images ---
+            await new AiSearchMultimodalEmbeddingsVectorSearchExample().Run();
 
             Console.ReadKey();
         }
