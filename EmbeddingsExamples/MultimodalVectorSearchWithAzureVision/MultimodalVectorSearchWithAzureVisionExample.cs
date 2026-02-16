@@ -5,7 +5,7 @@ using System.Net.Http.Json;
 
 namespace DeployedInAzure.EmbeddingsExamples.AiSearchMultimodalVectorSearch
 {
-    public class AiSearchMultimodalEmbeddingsVectorSearchExample
+    public class MultimodalVectorSearchWithAzureVisionExample
     {
         private DeployedInAzureVectorDb _vectorDb = new(supportedVectorDimension: 1024);
 
@@ -177,7 +177,7 @@ namespace DeployedInAzure.EmbeddingsExamples.AiSearchMultimodalVectorSearch
 
         private static string GetFilePath(string fileName)
         {
-            return Path.Combine(AppContext.BaseDirectory, "AiSearchMultimodalVectorSearch", "SamplePhotos", fileName);
+            return Path.Combine(AppContext.BaseDirectory, "MultimodalVectorSearchWithAzureVision", "SamplePhotos", fileName);
         }
     }
 }

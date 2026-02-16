@@ -18,16 +18,16 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="AiSearchMultimodalVectorSearch\SamplePhotos\astronaut.jpg">
+    <None Update="MultimodalVectorSearchWithAzureVision\SamplePhotos\astronaut.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AiSearchMultimodalVectorSearch\SamplePhotos\coffee.jpg">
+    <None Update="MultimodalVectorSearchWithAzureVision\SamplePhotos\coffee.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AiSearchMultimodalVectorSearch\SamplePhotos\mars.jpg">
+    <None Update="MultimodalVectorSearchWithAzureVision\SamplePhotos\mars.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AiSearchMultimodalVectorSearch\SamplePhotos\mars_rover.jpg">
+    <None Update="MultimodalVectorSearchWithAzureVision\SamplePhotos\mars_rover.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
