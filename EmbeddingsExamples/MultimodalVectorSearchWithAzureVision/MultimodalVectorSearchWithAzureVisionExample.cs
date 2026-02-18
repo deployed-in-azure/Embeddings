@@ -60,7 +60,7 @@ namespace DeployedInAzure.EmbeddingsExamples.AiSearchMultimodalVectorSearch
             }
             Console.WriteLine();
 
-            // Phase 2: Index text embeddings and compare each against Mars image
+            // Phase 2: Mars image vs each of the texts
             _vectorDb = new DeployedInAzureVectorDb(supportedVectorDimension: 1024);
 
             var textCandidates = new (string Label, float[] Vector)[]
