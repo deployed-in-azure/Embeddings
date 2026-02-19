@@ -8,6 +8,7 @@ using DeployedInAzure.EmbeddingsExamples.CosmosDbForNoSql;
 using DeployedInAzure.EmbeddingsExamples.CustomVectorDb;
 using DeployedInAzure.EmbeddingsExamples.CustomVectorDbFaiss;
 using DeployedInAzure.EmbeddingsExamples.EmbeddingModel;
+using DeployedInAzure.EmbeddingsExamples.ImageVerbalizationViaLLMs;
 using DeployedInAzure.EmbeddingsExamples.SoftLabelEncoding;
 
 namespace DeployedInAzure.EmbeddingsExamples
@@ -51,6 +52,9 @@ namespace DeployedInAzure.EmbeddingsExamples
 
             // --- Multimodal Embeddings with Azure Vision: A Practical Guide to Text-Image Search ---
             //await new MultimodalVectorSearchWithAzureVisionExample().Run();
+
+            // --- Image Verbalization via LLMs; A Simplified Path to Multimodal Search
+            //await new ImageVerbalizationViaLLMsExample().Run();
 
             Console.ReadKey();
         }
