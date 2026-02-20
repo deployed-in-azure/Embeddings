@@ -109,5 +109,16 @@ Ensure that your identity has:
 
 [Read the blog post to find more details](https://deployedinazure.com/multimodal-embeddings-with-azure-vision/)
 
+### Image Verbalization via LLMs: A Simplified Path to Multimodal Search
 
+Learn Image Verbalization via LLM to bridge the gap between pixels and text. Master C# vector search by turning images into searchable descriptions.
 
+To run the examples, set the following environment variables:
+- `AZURE_OPEN_AI_CLIENT_URI`: Your Microsoft Foundry endpoint URL.
+- `AZURE_OPEN_AI_EMBEDDING_CLIENT_DEPLOYMENT_NAME`: Your embedding model deployment name e.g. `text-embedding-ada-002`
+- `AZURE_OPEN_AI_EMBEDDING_CHAT_CLIENT_DEPLOYMENT_NAME`: Your LLM deployment name e.g. `gpt-4.1-mini`
+
+Ensure that your identity has:
+- the `Azure AI User` RBAC role assigned to access the Foundry resource
+
+[Read the blog post to find more details](https://deployedinazure.com/image-verbalization-via-llm/)

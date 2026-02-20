@@ -55,10 +55,10 @@ namespace DeployedInAzure.EmbeddingsExamples.ImageVerbalizationViaLLMs
                 ));
             }
 
-            var astronautText = "An astronaut stands on the Moon.";
-            var coffeeText = "A cup of latte with leaf art and a chocolate cake on a glass table.";
-            var marsText = "Mars appears red against dark space. Craters and valleys are visible.";
-            var marsRoverText = "A Mars rover sits on rocky terrain. Its wheels and arm are visible.";
+            var astronautText = "astronaut on the moon";
+            var coffeeText = "latte and cake outside";
+            var marsText = "planet mars from space";
+            var marsRoverText = "mars rover on rocky surface";
 
             var vectorizedTextAstronaut = await GetTextEmbeddingAsync(astronautText);
             var vectorizedTextCoffee = await GetTextEmbeddingAsync(coffeeText);
